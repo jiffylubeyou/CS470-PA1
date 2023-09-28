@@ -92,7 +92,7 @@ def montyhall():
 if __name__ == '__main__':
     stpetersburg()
     montyhall()
-
+# test
 
 
 
