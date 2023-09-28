@@ -37,8 +37,8 @@ def stpetersburg():
         total = total + money
         if (money > max):
             max = money
-    print("Average for 300 is " + str(total / 30000))
-    print("Max for 300 is " + str(max))
+    print("Average for 30000 is " + str(total / 30000))
+    print("Max for 30000 is " + str(max))
 
     max = 0
     total = 0
@@ -52,8 +52,8 @@ def stpetersburg():
         total = total + money
         if (money > max):
             max = money
-    print("Average for 300 is " + str(total / 3000000))
-    print("Max for 300 is " + str(max))
+    print("Average for 3000000 is " + str(total / 3000000))
+    print("Max for 3000000 is " + str(max))
 
 def montyhall():
     wins = 0
