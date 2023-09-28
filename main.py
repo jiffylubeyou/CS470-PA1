@@ -76,7 +76,7 @@ def montyhall():
 
         if (guess == winner):
             wins = wins + 1
-    print("Guess change strategy wins " + str((wins/1000) * 100) + " percent of the time")
+    print("Guess change strategy wins " + str((wins/iters) * 100) + " percent of the time")
 
     wins = 0
     for i in range(0, iters):
@@ -85,14 +85,54 @@ def montyhall():
 
         if (guess == winner):
             wins = wins + 1
-    print("Don't guess change strategy wins " + str((wins/1000) * 100) + " percent of the time")
+    print("Don't guess change strategy wins " + str((wins/iters) * 100) + " percent of the time")
 
+def diceroll():
+    return random.randint(1,6)
+
+def war(i, j, iters):
+    # i is number of attacker rolls and j is number of defender rolls
+    totalAttackerArmy = 0
+    totaldefenderArmy = 0
+
+    for k in range(0,iters):
+        attacker = []
+        for y in range(0, i):
+            attacker.append(diceroll())
+        defender = []
+        for z in range(0, j):
+            defender.append(diceroll())
+
+        attackerArmy = 0
+        defenderArmy = 0
+
+        while ((len(attacker) != 0) and len(defender) != 0):
+            attack = max(attacker)
+            defense = max(defender)
+
+            if (attack > defense):
+                defenderArmy = defenderArmy - 1
+            else:
+                attackerArmy = attackerArmy - 1
+
+            attacker.remove(attack)
+            defender.remove(defense)
+        totalAttackerArmy = totalAttackerArmy + attackerArmy
+        totaldefenderArmy = totaldefenderArmy + defenderArmy
+
+    print("For " + str(i) + " attacker roles and " + str(j) + " defender roles, " + str(totalAttackerArmy / iters) +
+          " attacking armies are lost and " + str(totaldefenderArmy / iters) + " defending armies are lost")
+
+def risk():
+    iters = 1000
+
+    for i in range(1,4):
+        for j in range(1,3):
+         war(i, j, iters)
 
 
 if __name__ == '__main__':
-    stpetersburg()
-    montyhall()
-# test
+    risk()
 
 
 
