@@ -132,6 +132,8 @@ def risk():
 
 
 if __name__ == '__main__':
+    stpetersburg()
+    montyhall()
     risk()
 
 
